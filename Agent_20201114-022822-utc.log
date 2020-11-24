@@ -6136,3 +6136,51 @@ Date: Sat, 21 Nov 2020 16:48:15 GMT
 [2020-11-21 16:48:15Z INFO RSAFileKeyManager] Loading RSA key parameters from file /home/shannonmae/azagent/.credentials_rsaparams
 [2020-11-21 16:48:16Z INFO VisualStudioServices] AAD Correlation ID for this token request: Unknown
 [2020-11-21 16:58:18Z INFO MessageListener] No message retrieved from session '3c67a277-59d5-4b24-94d6-212217ff0c88' within last 30 minutes.
+[2020-11-21 17:23:32Z WARN VisualStudioServices] GET request to https://dev.azure.com/medhometeam/_apis/distributedtask/pools/11/messages?sessionId=3c67a277-59d5-4b24-94d6-212217ff0c88 timed out after 60 seconds.
+[2020-11-21 17:23:32Z ERR  MessageListener] Catch exception during get next message.
+[2020-11-21 17:23:32Z ERR  MessageListener] System.TimeoutException: The HTTP request timed out after 00:01:00.
+ ---> System.Threading.Tasks.TaskCanceledException: A task was canceled.
+   at Microsoft.VisualStudio.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.VisualStudio.Services.Common.VssHttpMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at Microsoft.VisualStudio.Services.Common.VssHttpRetryMessageHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncBuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at Microsoft.VisualStudio.Services.WebApi.VssHttpClientBase.SendAsync(HttpRequestMessage message, HttpCompletionOption completionOption, Object userState, CancellationToken cancellationToken)
+   at Microsoft.VisualStudio.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpRequestMessage message, Object userState, CancellationToken cancellationToken)
+   at Microsoft.VisualStudio.Services.WebApi.VssHttpClientBase.SendAsync[T](HttpMethod method, IEnumerable`1 additionalHeaders, Guid locationId, Object routeValues, ApiResourceVersion version, HttpContent content, IEnumerable`1 queryParameters, Object userState, CancellationToken cancellationToken)
+   at Microsoft.VisualStudio.Services.Agent.Listener.MessageListener.GetNextMessageAsync(CancellationToken token)
+[2020-11-21 17:23:32Z INFO MessageListener] Retriable exception: The HTTP request timed out after 00:01:00.
+[2020-11-21 17:23:32Z ERR  Terminal] WRITE ERROR: 2020-11-21 17:23:32Z: Agent connect error: The HTTP request timed out after 00:01:00.. Retrying until reconnected.
+[2020-11-21 17:23:32Z INFO AgentServer] Refresh MessageQueue VssConnection to get on a different AFD node.
+[2020-11-21 17:23:32Z INFO AgentServer] Establish connection with 60 seconds timeout.
+[2020-11-21 17:23:32Z INFO VisualStudioServices] Starting operation Location.GetConnectionData
+[2020-11-21 17:23:33Z INFO VisualStudioServices] Finished operation Location.GetConnectionData
+[2020-11-21 17:23:33Z INFO MessageListener] Sleeping for 28.999 seconds before retrying.
+[2020-11-21 17:24:52Z INFO Terminal] WRITE LINE: 2020-11-21 17:24:52Z: Agent reconnected.
+[2020-11-21 17:29:06Z INFO MessageListener] No message retrieved from session '3c67a277-59d5-4b24-94d6-212217ff0c88' within last 30 minutes.
+[2020-11-21 17:43:18Z WARN VisualStudioServices] Authentication failed with status code 401.
+Cache-Control: no-cache
+Pragma: no-cache
+P3P: CP="CAO DSP COR ADMa DEV CONo TELo CUR PSA PSD TAI IVDo OUR SAMi BUS DEM NAV STA UNI COM INT PHY ONL FIN PUR LOC CNT"
+WWW-Authenticate: Bearer authorization_uri=https://login.microsoftonline.com/78540cf3-b2e0-49e0-b2de-de0b4910b4ed, Basic realm="https://tfsprodcus5.visualstudio.com/", TFS-Federated
+X-TFS-ProcessId: f3707de9-5766-42b0-8609-b9e62171e6d4
+Strict-Transport-Security: max-age=31536000; includeSubDomains
+ActivityId: a5a70e9e-0cad-49e1-8240-46a1e8fd3dbd
+X-TFS-Session: dbfae77b-771e-41c2-af91-138790fb34b6
+X-VSS-E2EID: 34eb1e7b-cc42-49d0-bd2b-699a4658484d
+X-Frame-Options: SAMEORIGIN
+X-TFS-FedAuthRealm: https://tfsprodcus5.visualstudio.com/
+X-TFS-FedAuthIssuer: https://dev.azure.com/medhometeam/
+X-VSS-AuthorizationEndpoint: https://vssps.dev.azure.com/medhometeam/
+X-VSS-ResourceTenant: 78540cf3-b2e0-49e0-b2de-de0b4910b4ed
+X-VSS-S2STargetService: 00000002-0000-8888-8000-000000000000/visualstudio.com
+X-TFS-FedAuthRedirect: https://spsprodcus3.vssps.visualstudio.com/_signin?realm=dev.azure.com&reply_to=https%3A%2F%2Fdev.azure.com%2Fmedhometeam%2F_apis%2Fdistributedtask%2Fpools%2F11%2Fmessages%3FsessionId%3D3c67a277-59d5-4b24-94d6-212217ff0c88&redirect=1&hid=64afc2a4-19ff-4ac7-9664-2b9476e54bfe&context=eyJodCI6MiwiaGlkIjoiNTVlNzBiYjAtYmI0YS00YTcyLWFkMzktMzc3ZmYwY2YzM2RkIiwicXMiOnt9LCJyciI6IiIsInZoIjoiIiwiY3YiOiIiLCJjcyI6IiJ90#ctx=eyJTaWduSW5Db29raWVEb21haW5zIjpbImh0dHBzOi8vbG9naW4ubWljcm9zb2Z0b25saW5lLmNvbSIsImh0dHBzOi8vbG9naW4ubWljcm9zb2Z0b25saW5lLmNvbSJdfQ2
+Request-Context: appId=cid-v1:8c62fdb3-4bc4-4e8a-99f1-6dee6bc4d8e3
+Access-Control-Expose-Headers: Request-Context
+X-Content-Type-Options: nosniff
+X-MSEdge-Ref: Ref A: 9B60A7523BDC4017B90B8F8DE219B3CF Ref B: ATAEDGE1012 Ref C: 2020-11-21T17:43:18Z
+Date: Sat, 21 Nov 2020 17:43:18 GMT
+
+[2020-11-21 17:43:18Z INFO RSAFileKeyManager] Loading RSA key parameters from file /home/shannonmae/azagent/.credentials_rsaparams
+[2020-11-21 17:43:19Z INFO VisualStudioServices] AAD Correlation ID for this token request: Unknown
+[2020-11-21 17:59:12Z INFO MessageListener] No message retrieved from session '3c67a277-59d5-4b24-94d6-212217ff0c88' within last 30 minutes.
