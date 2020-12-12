@@ -6,3 +6,5 @@
     "url": "https://github.com/suprethreal",
     "supports": ["5.0"]
 }
+
+theme: jekyll-theme-cayman
